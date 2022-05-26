@@ -1,0 +1,27 @@
+{
+  "name": "public-babel-building-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "remove-build": "rmdir /s /q build",
+    "create-build": "mkdir build",
+    "clean": "npm run remove-build && npm run create-build",
+    "build-babel": "babel ./src -d ./build/src",
+    "build": "npm run clean && npm run build-babel",
+    "production": "npm run build && node ./build/src/server.js",
+    "dev": "nodemon --exec babel-node ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibiann/public-babel-building-scripts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibiann/public-babel-building-scripts/issues"
+  },
+  "homepage": "https://github.com/ibiann/public-babel-building-scripts#readme"
+}
